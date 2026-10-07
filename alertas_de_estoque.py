@@ -12,6 +12,7 @@ def verificar_alertas():
     """)
 
     produtos = cursor.fetchall()
+    alertas = 0
 
     for produto in produtos:
 
@@ -21,4 +22,9 @@ def verificar_alertas():
 
         if quantidade <= minimo:
             print(f"ATENÇÃO: {nome} está com estoque baixo!")
+            alertas += 1
+
+    # sem essa mensagem, a tela ficava vazia e parecia que nada aconteceu
+    if alertas == 0:
+        print("Nenhum produto com estoque baixo.")
 

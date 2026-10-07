@@ -1,5 +1,6 @@
 import banco_de_dados
 import sqlite3
+from entradas import ler_inteiro, ler_decimal
 
 db = sqlite3.connect("controle_de_estoque.db")
 
@@ -11,9 +12,10 @@ def cadastrar_produto():
 
     nome = input("Nome do produto: ")
     categoria = input("Categoria: ")
-    valor = float(input("Valor: "))
-    quantidade = int(input("Quantidade: "))
-    estoque_minimo = int(input("Estoque mínimo: "))
+    # minimo=0: preço e quantidades negativas não fazem sentido
+    valor = ler_decimal("Valor: ", minimo=0)
+    quantidade = ler_inteiro("Quantidade: ", minimo=0)
+    estoque_minimo = ler_inteiro("Estoque mínimo: ", minimo=0)
 
     cursor.execute(""" INSERT INTO controle_de_estoque(
         produto, categoria, valor, quantidade, estoque_minimo)
@@ -21,6 +23,9 @@ def cadastrar_produto():
         """, (nome, categoria, valor, quantidade, estoque_minimo))
 
     db.commit()
+    print("Produto cadastrado!")
+
+
 def ver_estoque():
 
     cursor = db.cursor()
@@ -32,6 +37,11 @@ def ver_estoque():
     print("\nESTOQUE")
     print("-" * 50)
 
-    for item in dados:
-        print(item)
+    if not dados:
+        print("Nenhum produto cadastrado.")
+        return
+
+    for id_produto, produto, categoria, valor, quantidade, minimo in dados:
+        print(f"[{id_produto}] {produto} ({categoria}) | R$ {valor:.2f} | "
+              f"qtd: {quantidade} | mínimo: {minimo}")
 

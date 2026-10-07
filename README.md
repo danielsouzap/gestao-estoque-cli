@@ -89,8 +89,7 @@ entradas.py               leitura validada de números e datas
 
 ## Créditos
 
-Projeto em grupo do 1º semestre de Ciência da Computação (UDF, 2026.1). O código Python foi desenvolvido por mim. [@j-alexsander](https://github.com/j-alexsander) e [@EmillyVicxtss](https://github.com/EmillyVicxtss) contribuíram com a documentação original. Repositório original: [j-alexsander/MRP---GEST-O-DE-ESTOQUE](https://github.com/j-alexsander/MRP---GEST-O-DE-ESTOQUE).
-
+Projeto em grupo do 1º semestre de Ciência da Computação (UDF, 2026.1). O código Python foi desenvolvido por mim. [@j-alexsander](https://github.com/j-alexsander) e [@EmillyVicxtss](https://github.com/EmillyVicxtss) contribuíram com a documentação original.
 ---
 
 Daniel Souza Passos · [GitHub](https://github.com/danielsouzap) · [LinkedIn](https://www.linkedin.com/in/daniel-souza-8b9279349)

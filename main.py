@@ -3,6 +3,7 @@ from produtos import cadastrar_produto, ver_estoque
 from movimentacao import entrada_produto, saida_produto
 from relatorio_de_estoque import ver_movimentacoes, giro_estoque, nivel_servico, tempo_reposicao, custo_manutencao
 from alertas_de_estoque import verificar_alertas
+from entradas import ler_inteiro
 import time
 
 criar_tabelas()
@@ -12,18 +13,19 @@ while True:
     print("""
 (1) - Cadastrar Produto
 (2) - Ver Estoque
-(3 - Entrada De Produto
+(3) - Entrada De Produto
 (4) - Saída De Produto
 (5) - Ver Movimentações
 (6) - Ver Alertas
 (7) - Ver Giro De Estoque
-(8) - Nivel de Serviço
+(8) - Nível de Serviço
 (9) - Tempo de Reposição
-(10) - Custo de manutenção
+(10) - Custo de Manutenção
 (0) - Sair
 """)
 
-    opcao = int(input("Escolha: "))
+    # ler_inteiro repete a pergunta se o usuário digitar texto
+    opcao = ler_inteiro("Escolha: ")
 
     if opcao == 1:
         cadastrar_produto()
@@ -54,7 +56,7 @@ while True:
     elif opcao == 0:
         print("Saindo...")
         time.sleep(2)
-        print("Voce Saiu")
+        print("Você saiu")
         break
 
     else:

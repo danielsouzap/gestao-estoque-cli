@@ -1,0 +1,14 @@
+# Banco gerado ao rodar o programa: dados locais, não vão para o repositório
+*.db
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Ambiente virtual e variáveis de ambiente
+.venv/
+venv/
+.env
+
+# Arquivos do sistema
+.DS_Store
